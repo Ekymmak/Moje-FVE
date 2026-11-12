@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101923">
+  <meta name="description" content="Moje FVE – přehled domácí fotovoltaiky a VW ID.3">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <title>Moje FVE</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b121a;--panel:#141f2b;--panel2:#192735;--line:#293949;--muted:#9aabba;--text:#f3f7fa;--green:#62d69b;--blue:#6bb8ff;--amber:#f2c66d}
+    *{box-sizing:border-box} body{margin:0;background:radial-gradient(ellipse at 80% -10%,#1b3544 0,transparent 42%),var(--bg);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,sans-serif}
+    .wrap{max-width:760px;margin:auto;padding:env(safe-area-inset-top) 16px calc(28px + env(safe-area-inset-bottom))}
+    header{display:flex;justify-content:space-between;align-items:center;padding:22px 2px 18px}
+    .brand{display:flex;gap:11px;align-items:center}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#3dcb91,#1d806e);display:grid;place-items:center;font-size:23px}
+    h1{font-size:21px;margin:0;letter-spacing:.2px}.sub{font-size:12px;color:var(--muted);margin-top:3px}
+    .status{font-size:11px;border:1px solid #69552a;color:var(--amber);border-radius:30px;padding:7px 10px;white-space:nowrap}
+    .section{display:flex;align-items:center;justify-content:space-between;margin:18px 2px 10px}.section h2{font-size:15px;margin:0;font-weight:700}.tag{font-size:10px;color:var(--amber);background:#45391e;border-radius:20px;padding:5px 8px}
+    .hero{background:linear-gradient(135deg,#183c3b,#142b35 65%,#172433);border:1px solid #2d5b54;border-radius:22px;padding:18px;margin-bottom:12px}
+    .heroTop{display:flex;justify-content:space-between;align-items:center}.eyebrow{font-size:12px;color:#b8d7cf}.big{font-size:37px;font-weight:750;letter-spacing:-1.5px;margin:9px 0 2px}.unit{font-size:15px;color:#b8d7cf;font-weight:500}.muted{color:var(--muted);font-size:12px}
+    .bar{height:8px;background:#263b43;border-radius:20px;overflow:hidden;margin:14px 0 7px}.bar span{display:block;height:100%;width:30%;background:linear-gradient(90deg,#4bc78d,#9ce4b7);border-radius:20px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.tile{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:14px;min-height:105px}
+    .tileHead{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}.ico{font-size:17px}.value{font-size:24px;font-weight:720;margin:12px 0 3px;letter-spacing:-.5px}.unitSmall{font-size:13px;color:var(--muted);font-weight:500}
+    .wide{grid-column:1/-1}.flow{display:flex;justify-content:space-between;gap:6px;margin-top:14px}.flow div{flex:1;text-align:center;background:#1b2b38;border-radius:12px;padding:10px 4px}.flow b{display:block;font-size:15px}.flow small{font-size:10px;color:var(--muted)}
+    .car{background:linear-gradient(135deg,#1b2d43,#172433);border:1px solid #30465d;border-radius:20px;padding:17px}
+    .carTop{display:flex;justify-content:space-between;align-items:center}.carName{font-size:17px;font-weight:700}.carIcon{font-size:27px}
+    .socRow{display:flex;align-items:baseline;gap:6px;margin:17px 0 5px}.soc{font-size:34px;font-weight:750}.range{margin-left:auto;text-align:right}.range b{font-size:21px}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}.mini{background:#203247;padding:11px;border-radius:12px}.mini span{display:block;color:var(--muted);font-size:11px}.mini b{display:block;margin-top:5px;font-size:14px}
+    .notice{margin-top:15px;padding:12px 13px;border:1px solid #574a2b;background:#28251d;border-radius:13px;color:#d9c99c;font-size:12px;line-height:1.45}
+    .footer{color:#778999;text-align:center;font-size:11px;padding:22px 8px 5px;line-height:1.5}
+    nav{display:flex;gap:8px;margin:18px 0 4px}.navbtn{flex:1;border:1px solid var(--line);border-radius:12px;background:#121d28;color:#aebdca;padding:11px 5px;font-size:12px}.navbtn.active{background:#1c3c3b;border-color:#347c69;color:#c9f3df}
+    @media(min-width:600px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.wide{grid-column:span 2}.hero{padding:22px}.tile{min-height:115px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><div class="logo">☀</div><div><h1>Moje FVE</h1><div class="sub">Domácí energie na jednom místě</div></div></div>
+    <div class="status">● DEMO DATA</div>
+  </header>
+
+  <div class="section"><h2>Energetický přehled</h2><span class="tag">UKÁZKOVÉ HODNOTY</span></div>
+  <section class="hero">
+    <div class="heroTop"><span class="eyebrow">☀ Výroba fotovoltaiky dnes</span><span class="eyebrow">GoodWe</span></div>
+    <div class="big">11,30 <span class="unit">kWh</span></div>
+    <div class="muted">Denní vyrobená energie · demonstrační údaj</div>
+    <div class="bar"><span></span></div>
+    <div class="heroTop"><span class="muted">Baterie Pylontech</span><b>30 %</b></div>
+  </section>
+
+  <div class="grid">
+    <div class="tile"><div class="tileHead"><span>🏠 Spotřeba domu</span><span>↗</span></div><div class="value">18,28 <span class="unitSmall">kWh</span></div><div class="muted">Dnes · demo</div></div>
+    <div class="tile"><div class="tileHead"><span>🔋 Baterie</span><span>●</span></div><div class="value">30 <span class="unitSmall">%</span></div><div class="muted">Stav nabití · demo</div></div>
+    <div class="tile"><div class="tileHead"><span>⚡ Síť</span><span>↓</span></div><div class="value">2,75 <span class="unitSmall">kW</span></div><div class="muted">Odběr ze sítě · demo</div></div>
+    <div class="tile"><div class="tileHead"><span>🔌 Wallbox</span><span>↗</span></div><div class="value">0,00 <span class="unitSmall">kW</span></div><div class="muted">GoodWe HCA G2 · demo</div></div>
+    <div class="tile wide">
+      <div class="tileHead"><span>Tok energie – okamžitý přehled</span><span>⚡</span></div>
+      <div class="flow">
+        <div><b>0,00 kW</b><small>FVE</small></div><div><b>2,75 kW</b><small>Síť → dům</small></div><div><b>0,00 kW</b><small>Wallbox</small></div>
+      </div>
+    </div>
+    <div class="tile wide"><div class="tileHead"><span>📊 Historie</span><span>Posledních 7 dní</span></div><div class="value">Připraveno</div><div class="muted">Grafy doplníme po připojení živých dat.</div></div>
+  </div>
+
+  <div class="section"><h2>Volkswagen ID.3</h2><span class="tag">ČEKÁ NA PŘIPOJENÍ</span></div>
+  <section class="car">
+    <div class="carTop"><div><div class="carName">VW ID.3 · 58 kWh</div><div class="muted">Stav vozidla</div></div><div class="carIcon">🚙</div></div>
+    <div class="socRow"><div class="soc">— %</div><div class="muted">stav baterie</div><div class="range"><b>— km</b><div class="muted">dojezd</div></div></div>
+    <div class="bar"><span style="width:0%;background:#6bb8ff"></span></div>
+    <div class="two"><div class="mini"><span>Stav nabíjení</span><b>Nepropojeno</b></div><div class="mini"><span>Poslední aktualizace</span><b>—</b></div></div>
+  </section>
+
+  <div class="notice"><b>Důležité:</b> Aplikace zatím zobrazuje ukázkové hodnoty, nikoli živá data. Připojení GoodWe a Volkswagen ještě není aktivní. Přihlašovací údaje nikam nezadávej – propojení připravíme bezpečně přes autorizované rozhraní.</div>
+  <nav><button class="navbtn active" type="button">Přehled</button><button class="navbtn" type="button" onclick="alert('Historie se aktivuje po připojení dat.')">Historie</button><button class="navbtn" type="button" onclick="alert('Nastavení připojení doplníme v další fázi.')">Připojení</button></nav>
+  <div class="footer">Moje FVE · první prototyp rozhraní<br>Verze 0.1 · pouze monitoring · bez ovládání zařízení</div>
+</div>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+  }
+</script>
+</body>
+</html>
